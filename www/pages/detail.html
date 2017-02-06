@@ -1,0 +1,28 @@
+<div class="app">
+    <div class="before_ready">
+
+
+        <div class="productDisc">
+            <div class="productImg">
+                <img src="{{ detail.product.image.src }}" />
+            </div>
+
+            <div class="product_Title">
+                <div class="atgLogo">
+                    <a href="#/dashboard.html"><img src="img/leaf.png" /></a>
+                </div>
+                <h2>{{ detail.product.title }}</h2>
+                <p>By All That Grows</p>
+            </div>
+
+            <div class="productBody" ng-bind-html="detail.description">
+                
+            </div>
+
+        </div>
+    </div>
+    <div class="after_ready">
+
+    </div>
+
+</div>

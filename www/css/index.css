@@ -1,0 +1,359 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#F5F5F5;
+    background-attachment:fixed;
+    font-family:'Montserrat', sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+
+
+/* Portrait layout (default) */
+.home_logo {
+    background:#fff url(../img/logo.png) no-repeat center center; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:0;
+    top:0;
+    height:100%;                   /* text area height */
+    width:100%;                   /* text area width */
+    text-align:center;
+    padding:0;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:0;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+p.home_foot {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+p.home_foot span {
+    color: #4DC194;
+}
+
+/*  DASHBOARD  */
+
+.dashboard{
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+.dashboard .logo{
+  padding: 0;
+  display: table;
+  width: 100%;
+  height: 25%;
+}
+.dashboard .logo a{
+  display: table-cell;
+  vertical-align: middle;
+}
+.dashboard .logo img{
+  width: 110px;
+}
+
+.dashboard ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 75%;
+}
+.dashboard li{
+  display: table;
+  width: 90%;
+  height: 30%;
+  padding: 0 5%;
+  margin: 4.5% 0;
+  text-transform: uppercase;
+}
+
+.dashboard li:first-child,
+.dashboard li:last-child{
+  margin: 0;
+}
+.dashboard li a{
+  display: table-cell;
+  vertical-align: middle;
+  background: #fff;
+  font:bold 18px 'Montserrat', sans-serif;
+  color: #3D3D3D;
+  text-decoration: none;
+
+  /* Rectangle: */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);
+  border-radius: 5px;
+}
+.dashboard li a:hover{
+  /* Rectangle: */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
+  background: rgba(0,0,0,0.1);
+}
+.dashboard li a span{
+  font:normal 18px 'Montserrat', sans-serif;
+  color: #4EC498;
+  display: block;
+}
+/*  BROWSE PRODUCTS RELATED CSS  */
+
+.browseProducts{
+  padding-top: 64px;
+  position: relative;
+}
+
+.searchBar{
+  background: rgba(256,256,256,0.5);
+}
+.searchBar .textx{
+  padding: 5%;
+  width: 90%;
+  outline: none;
+  font:normal 16px 'Montserrat', sans-serif;
+  background: none;
+  border: none;
+}
+
+.browseProducts .headerATG{
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.browseProducts .logo{
+  float: left;
+}
+.browseProducts .logo a{
+  display: block;
+  padding: 15px 20px;
+}
+.browseProducts .logo img{
+  vertical-align: middle;
+  height: 34px;
+}
+.browseProducts .pageTitle{
+  display: inline-block;
+  padding: 15px 10px;
+  font: 16px/34px 'Montserrat', sans-serif;
+}
+.browseProducts .searchIcon{
+  position: absolute;
+  top: 24px;
+  right: 22px;
+  background: url(../img/searchbar.png) 0px 0px no-repeat;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+.browseProducts .searchIcon.offBtn{
+  opacity: 0.2;
+}
+
+.browseProducts ul{
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+.browseProducts li{
+  margin: 2.5%;
+  padding: 1%;
+  background: #fff;
+  width: 43%;
+  float: left;
+  text-align: center;
+  /* Rectangle 2: */
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);
+}
+.browseProducts img{
+  max-width: 100%
+}
+.browseProducts p{
+  font:14px 'Montserrat', sans-serif;
+  color: #3D3D3D;
+}
+
+.clearFix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  /*PRODUCT PAGE  */
+
+  .product_Title{
+    margin: 20px 20px 20px 60px;
+    position: relative;
+  }
+  .product_Title h2{
+    font: 22px 'Montserrat', sans-serif;
+    color: #000;
+    padding: 0;
+    margin: 5px 0;
+
+  }
+  .product_Title .atgLogo{
+    position: absolute;
+    left: -35px;
+    top: 2px;
+  }
+
+.productImg img{display:block; margin: auto;max-width: 100%}
+.productImg{
+  background: #000;
+}
+
+  .product_Title p{
+    color: rgba(0,0,0,0.5);
+    font: 13px 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .productBody p{
+    font: 13px/21px 'Open Sans', sans-serif;
+    color: rgba(0,0,0,0.9);
+  }
+
+  .productBody{
+    padding: 0px 20px 20px 60px;
+  }
+
+
+
+@media screen and (min-width:500px){
+  .dashboard li{
+    height: 23%;
+  }
+  .dashboard li a span{display: inline;}
+}
+
+@media screen and (min-width:700px){
+  .dashboard li{
+    height: 25%;
+  }
+
+  .searchBar .textx{
+    padding: 2%;
+    width: 96%;
+  }
+
+  .browseProducts li{
+    margin: 2.5%;
+    padding: 1%;
+    width: 26%;
+  }
+}
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .home_logo {
+        margin:0px;
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+#loader {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .8;
+    display: none
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+    width: 50px;
+    height: 50px;
+}
