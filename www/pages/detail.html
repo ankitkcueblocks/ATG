@@ -1,28 +1,94 @@
-<div class="app">
-    <div class="before_ready">
-
-
-        <div class="productDisc">
-            <div class="productImg">
-                <img src="{{ detail.product.image.src }}" />
-            </div>
-
-            <div class="product_Title">
-                <div class="atgLogo">
-                    <a href="#/dashboard.html"><img src="img/leaf.png" /></a>
-                </div>
-                <h2>{{ detail.product.title }}</h2>
-                <p>By All That Grows</p>
-            </div>
-
-            <div class="productBody" ng-bind-html="detail.description">
+<div class="container">
+    <div class="productmenu-block">
+        <div class="product-img" style="background:url('{{ detail.product.image.src}}') no-repeat scroll center center / cover;">
+        </div>
+        <div class="product-title">
+            <a href="#/search"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <p>{{ detail.product.title}} <span>{{ detail.product.tags}}</span></p>
+        </div>
+        
+        <ul>
+            <li ng-repeat="title in detail.desc_titles" class="slide-{{$index}}">
+                <a href="javascript:void(0)">{{ title.key }}</a>
+            </li>
+            <p ng-show="!detail.have_desc" class="coming-soon">COMING SOON</p>
+        </ul>
+    </div>
+    <div class="productdetail-block">
+        <div class="product-title" style="background: url('{{ detail.product.image.src}}') no-repeat scroll 0 0 / cover;">
+            <div class="overlay"></div>
+            <a href="javascript:void(0)" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <p>{{ detail.product.title}} <span>{{ detail.product.tags}}</span></p>
+        </div>
+        <div class="product-detail">
+            <div class="product-detail-slider">
                 
-            </div>
+                <div class="silde" ng-if="detail.how_to_plant != '' ">
+                    <div class="slide-container">
+                        <h3>How to plant</h3>
+                        <ul class="plant">
+                            <li ng-repeat="hot_to_plant in detail.how_to_plant" class="{{ hot_to_plant.key}}">
+                                <p>{{ hot_to_plant.value}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="next" data-value="1"><span>Requirements to grow</span></a>
+                </div>
 
+                <div class="silde" ng-if="detail.req_to_grow != '' ">
+                    <div class="slide-container">
+                        <h3>Requirements to grow</h3>
+                        <ul>
+                            <li ng-repeat="req_to_grow in detail.req_to_grow">
+                                <h4>{{ req_to_grow.key}}</h4>
+                                <p>{{ req_to_grow.value}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="next" data-value="2"><span>How to Harvest</span></a>
+                </div>
+
+                <div class="silde" ng-if="detail.how_to_harvest != '' ">
+                    <div class="slide-container">
+                        <h3>How to Harvest</h3>
+                        <ul>
+                            <li ng-repeat="harvest in detail.how_to_harvest">
+                                <div class="icon">{{ $index + 1}}</div>
+                                <p>{{ harvest.value}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="next" data-value="3"><span>Nutrition Value</span></a>
+                </div>
+
+                <div class="silde" ng-if="detail.nutrition != '' ">
+                    <div class="slide-container">
+                        <h3>Nutrition Value</h3>
+                        <p class="nu-desc">{{ detail.nutrition_intro}}</p>
+                        <div class="nu-list">
+                            <ul>
+                                <li ng-repeat="nutrition in detail.nutrition">
+                                    <p class="value" ng-bind-html="nutrition.value"></p>
+                                    <p class="unit">{{ nutrition.key}}</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <a href="javascript:void(0)" class="next" data-value="4"><span>Health Benefit</span></a>
+                </div>
+                <div class="silde" ng-if="detail.benefit != '' ">
+                    <div class="slide-container">
+                        <h3>Health Benefit</h3>
+                        <ul class="health_container">
+                            <li ng-repeat="benefit in detail.benefit" class="{{ benefit.key}}">
+                                {{ benefit.value}}
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="next" data-value="5"><span>How to plant</span></a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="after_ready">
-
-    </div>
-
 </div>

@@ -2,37 +2,33 @@
     <div class="before_ready">
         <div class="browseProducts">
 
-            <div class="headerATG clearFix">
-                <div class="logo"><a href="#/dashboard.html"><img src="img/leaf.png" /></a></div>
-                <div class="pageTitle">Search Products</div>
-
-                <span class="searchIcon offBtn">Search</span>
-            </div>
-
-            <div class="searchBar">
-                <input type="text" class="textx" placeholder="Search Product" value="Tomato" />
-            </div>
+           <div class="headerATG clearFix">
+                <div class="header-container">
+                    <div class="logo">
+                        <a href="#/dashboard.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="pageTitle">Browse Products</div>
+                    <span class="icon-searchIcon" ng-class="{'active' : search.isActive}" ng-click="search.toggleField()"></span>
+                    <div class="searchBar" id="searchBar" ng-class="{'active' : search.isActive}">
+                        <input id="searchField" type="text" class="textx" placeholder="Search Product" ng-model="search.searchText" />
+                    </div>
+                </div>
+           </div>
 
 
             <div class="productsATG">
-
                 <ul>
-                    <li ng-repeat="product in search.products">
-                        <a href="#/detail/{{ product.id }}">
-                            <div class="productCards">
-                                <img src="{{ product.image.src }}" />
-                                <p>{{ product.title }}</p>
+                    <li ng-repeat="product in filteredProducts = (search.products | filter:search.searchText)" >
+                        <a href="#/detail/{{ product.id }}" >
+                            <div class="productCards" data-tag="{{ product.tags }}, {{ product.product_type }}">
+                                <div class="pro-img" style="background:url('{{ product.image.src }}') no-repeat scroll center top / contain "></div>
+                                <p>{{ product.title | limitTo: 20 }}{{product.title.length > 20 ? '...' : ''}}</p>
                             </div>
                         </a>
                     </li>
                 </ul>
-
+                <div ng-show="!filteredProducts.length"  ng-bind-html="search.noResult" class="noResult"></div>
             </div>
-
-
-
-
-
         </div>
     </div>
     <div class="after_ready">

@@ -7,73 +7,29 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-barcodescanner": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
+        },
+        "cordova-plugin-ignore-lint-translation": {
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
+        },
+        "cordova-fabric-plugin": {
+            "FABRIC_API_KEY": "ddc62df6e990d2ebf44a166eff52314f9f02593a",
+            "FABRIC_API_SECRET": "68454ecb378c23d4029683c4b07125e8fe877c8d620e6058a78073976d159215",
+            "PACKAGE_NAME": "cueblocks.app.allthatgrows"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        }
-    }
+    "dependent_plugins": {}
 }

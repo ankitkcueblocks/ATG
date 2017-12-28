@@ -578,14 +578,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar",
-        "pluginId": "cordova-plugin-statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-statusbar/src/browser/statusbar.js",
         "id": "cordova-plugin-statusbar.statusbar.Browser",
         "pluginId": "cordova-plugin-statusbar",
@@ -610,6 +602,125 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "clobbers": [
+            "cordova.plugins.barcodeScanner"
+        ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+        "id": "cordova-plugin-camera.Camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "Camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+        "id": "cordova-plugin-camera.CameraPopoverOptions",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "CameraPopoverOptions"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/Camera.js",
+        "id": "cordova-plugin-camera.camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "navigator.camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
+        "id": "cordova-plugin-camera.CameraProxy",
+        "pluginId": "cordova-plugin-camera",
+        "runs": true
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "clobbers": [
+            "cordova.plugins.barcodeScanner"
+        ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-network-information/www/network.js",
+        "id": "cordova-plugin-network-information.network",
+        "pluginId": "cordova-plugin-network-information",
+        "clobbers": [
+            "navigator.connection",
+            "navigator.network.connection"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+        "id": "cordova-plugin-network-information.Connection",
+        "pluginId": "cordova-plugin-network-information",
+        "clobbers": [
+            "Connection"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-network-information/src/browser/network.js",
+        "id": "cordova-plugin-network-information.NetworkInfoProxy",
+        "pluginId": "cordova-plugin-network-information",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+        "id": "cordova-plugin-statusbar.StatusBarProxy",
+        "pluginId": "cordova-plugin-statusbar",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-fabric-plugin/www/FabricPlugin.js",
+        "id": "cordova-fabric-plugin.FabricPlugin",
+        "pluginId": "cordova-fabric-plugin",
+        "clobbers": [
+            "window.fabric.core"
+        ]
+    },
+    {
+        "file": "plugins/cordova-fabric-plugin/www/FabricPlugin.Answers.js",
+        "id": "cordova-fabric-plugin.FabricAnswersPlugin",
+        "pluginId": "cordova-fabric-plugin",
+        "clobbers": [
+            "window.fabric.Answers"
+        ]
+    },
+    {
+        "file": "plugins/cordova-fabric-plugin/www/FabricPlugin.Crashlytics.js",
+        "id": "cordova-fabric-plugin.FabricCrashlyticsPlugin",
+        "pluginId": "cordova-fabric-plugin",
+        "clobbers": [
+            "window.fabric.Crashlytics"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -619,7 +730,6 @@ module.exports.metadata =
     "cordova-plugin-battery-status": "1.1.2",
     "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-console": "1.0.5",
     "cordova-plugin-contacts": "2.0.1",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-device-motion": "1.2.3",
@@ -632,11 +742,14 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.3.0",
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-media-capture": "1.2.0",
-    "cordova-plugin-network-information": "1.2.1",
+    "cordova-plugin-network-information": "1.3.2",
     "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-ignore-lint-translation": "0.0.1",
+    "phonegap-plugin-barcodescanner": "6.0.6",
+    "cordova-plugin-statusbar": "2.2.2",
+    "cordova-fabric-plugin": "1.1.9"
 }
 // BOTTOM OF METADATA
 });

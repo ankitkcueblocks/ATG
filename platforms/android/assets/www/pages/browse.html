@@ -2,35 +2,73 @@
 
     <div class="app">
         <div class="before_ready">
-            <div class="browseProducts">
+            <div class="faqs">
 
                 <div class="headerATG clearFix">
-                    <div class="logo"><a href="#/dashboard.html"><img src="img/leaf.png" /></a></div>
-                    <div class="pageTitle">Browse Products</div>
-
-                    <span class="searchIcon">Search</span>
+                    <div class="logo"><a href="#/dashboard.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a></div>
+                    <div class="pageTitle">FAQs</div>
                 </div>
 
-                <div class="searchBar" style="display:none;">
-                    <input type="text" class="textx" placeholder="Search Product" />
+<!--
+                <div class="haveaQ" ng-class="{'inactive' : browse.isActive}" ng-click="browse.toggleField()">
+                    <span>Have a Question?</span>
                 </div>
-
-
-                <div class="productsATG">
+-->
+                <div class="haveaQExpanded">
+                    <button type="button" class="faq-btn-active">Have a Question?</button>
+<!--                    <h2 ng-click="browse.toggleField()" class="tab-toggle">Have a Question?</h2>-->
+                    <div class="haveaQcontainer">
+                    <form ng-submit="browse.processForm(contactForm)" name="contactForm" novalidate ng-class="{'active' : browse.isActive}">
+                        <button type="button" class="faq-btn-inactive">Have a Question?</button>
+                        <ul>
+                            <li><div class="alert-box success" ng-show="browse.isSubmit">Thanks for contacting us! We'll get back to you as soon as possible.</div></li>
+                            <li>
+                                <label>Name</label>
+                                <input type="text" class="name" ng-model="browse.formData.name" ng-maxlength="20" name="name" required ng-keyup="browse.name=true"> 
+                                <p ng-show="contactForm.name.$error.required && (browse.name || browse.submitted)" class="help-block">Name is required.</p>
+                                <p ng-show="contactForm.name.$error.maxlength && browse.name" class="help-block">Name must be Maximum 20 character long.</p>
+                            </li>
+                            <li>
+                                <label>Email</label>
+                                <input type="email" class="email" ng-model="browse.formData.email" name="email" ng-keyup="browse.email=true" required>
+                                <p ng-show="contactForm.email.$error.required && (browse.email || browse.submitted)" class="help-block">Email is required.</p>
+                                <p ng-show="(browse.email || browse.submitted) && contactForm.email.$error.email" class="help-block">Enter a valid email.</p>
+                            </li>
+                            <li>
+                                <label>Phone Number</label>
+                                <input type="text" class="phone" ng-pattern="/^[0-9]{10,11}$/" ng-model="browse.formData.number" name="phoneNumber" ng-keyup="browse.phone=true" required>
+                                <p class="help-block" ng-show="(browse.phone || browse.submitted) && contactForm.phoneNumber.$error.required">Phone number is required</p>
+                                <p class="help-block" ng-show="(browse.phone || browse.submitted) && contactForm.phoneNumber.$error.pattern">Phone number is not valid</p>
+                            </li>
+                            <li>
+                                <label>Message</label>
+                                <textarea class="txtarea" ng-model="browse.formData.message" name="textarea" maxlength="250" ng-keyup="browse.message=true" required></textarea>
+                                <p ng-show="contactForm.textarea.$error.required && (browse.message || browse.submitted)" class="help-block">Message is required.</p>
+                            </li>
+                            <li class="submit">
+                                <input type="submit" value="Ask Now" ng-click="browse.submitted=true">
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="qNa">
 
                     <ul>
-                        <li ng-repeat="product in browse.products">
-                            <a href="#/detail/{{ product.id}}">
-                                <div class="productCards">
-                                    <img src="{{ product.image.src}}" />
-                                    <p>{{ product.title}}</p>
-                                </div>
-                            </a>
+                        <li ng-repeat="queAns in browse.queAns">
+                            <div class="ques">
+                                <h2 class="" ng-click="browse.toggleQueAns($event)" >{{ queAns.que}}</h2>
+                            </div>
+                            <div class="ans" ng-bind-html="queAns.ans"></div>
                         </li>
                     </ul>
 
+
+
+                </div>
+                    </div>
+
                 </div>
 
+                
 
 
 

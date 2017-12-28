@@ -18,28 +18,49 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function() {
-        setTimeout(function(){
-            window.location = 'dashboard.html';
-        }, 2000)
-        
+    receivedEvent: function () {
+        alert(checkConnection());
+        if (checkConnection() == "none") {
+            alert("No internet connection found.");
+            navigator.app.exitApp();
+        } else {
+            setTimeout(function () {
+                window.location = 'dashboard.html';
+            }, 2000);
+        }
+
     }
 };
+
+function checkConnection() {
+    var networkState = navigator.network.connection.type;
+    var states = {};
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.NONE] = 'No network connection';
+    //console.log('Connection : ' + Connection);
+    //console.log('Connection type: ' + states[networkState]);
+    return networkState;
+}

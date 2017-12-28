@@ -19,41 +19,63 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="atg">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline';img-src *; style-src 'global' 'unsafe-inline'; media-src *" />-->
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Amatica+SC|Montserrat" rel="stylesheet">
+        <!--        <meta charset="utf-8" />
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="msapplication-tap-highlight" content="no" />
+                <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+                 Allow XHRs via https only
+                <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
+                 Enable all requests, inline styles, and eval()
+                <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+                <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *">-->
+        <!-- Allow requests to foo.com -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' apps.cueblocks.com">-->
+        <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+        * Create your own at http://cspisawesome.com
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+        <title>AllThatGrows</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>AllThatGrows</title>
-</head>
-
-<body>
-    <div class="app">
-        <div class="before_ready">
-            <div class="home_logo"></div>
-            <p class="home_foot">seed <span>wiki</span></p>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet"> 
+        <link href="css/slick.css" rel="stylesheet"> 
+        <link href="css/slick-theme.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.min.js" type="text/javascript"></script>
+        <script src="js/angular-sanitize.js" type="text/javascript"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+    </head>
+    <body class="bg-init">
+        <div class="app">
+            <div id="i-phone_blank" class=""></div>
+            <ng-view autoscroll="true"></ng-view>
         </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
-
+        <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>-->
+        <div id="loader">
+            <div class="spinner">
+                <img src="img/leafv2.gif" class="leafLoad">
+            </div>
+        </div>
+    </body>
 </html>
