@@ -246,6 +246,9 @@ var app = angular.module("atg", ["ngRoute", 'ngSanitize'])
                 }
             })
                     .then(function (response) {
+
+                        console.log(response);
+
                         if (response.data != '') {
 
 
@@ -336,7 +339,13 @@ var app = angular.module("atg", ["ngRoute", 'ngSanitize'])
 
                             th.product = response.data;
                             th.description = response.data.body_html;
-
+                            th.isMicrogreen = function () {
+                                if (response.data.title.toLowerCase().indexOf('microgreen') != -1) {
+                                    return false;
+                                } else {
+                                    return true;
+                                }
+                            }
                             setTimeout(function () {
                                 singlePage();
                             }, 100);
@@ -528,7 +537,6 @@ function singlePage() {
 }
 
 
-
 function onOffline() {
     // Handle the offline event
 
@@ -540,3 +548,9 @@ function ononline() {
 
     //alert('Internet Started');
 }
+
+$(document).ready(function () {
+    $(document).on("click", ".microgreen-wrapper", function () {
+        $(this).parent(".product-img").addClass("play");
+    });
+});

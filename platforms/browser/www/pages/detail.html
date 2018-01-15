@@ -1,15 +1,23 @@
 <div class="container">
     <div class="productmenu-block">
+
         <div class="product-img" style="background:url('{{ detail.product.image.src}}') no-repeat scroll center center / cover;">
+            <div class="microgreen-wrapper" ng-hide="detail.isMicrogreen()"><img src="img/playbtn.png" class="app-playbtn" alt="Play" title="Play" />Learn How to Grow Microgreens</div>
+
+            <div class="microgreen-video" id="pause-video">
+                <!-- <img src="img/video_close.png" class="app-closebtn" alt="Close" title="Close" /> -->
+                <iframe id="app-video" width="560" height="220" src="https://www.youtube.com/embed/tbUNKk4SJGk" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
+
         <div class="product-title">
             <a href="#/search"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
             <p>{{ detail.product.title}} <span>{{ detail.product.tags}}</span></p>
         </div>
-        
+
         <ul>
             <li ng-repeat="title in detail.desc_titles" class="slide-{{$index}}">
-                <a href="javascript:void(0)">{{ title.key }}</a>
+                <a href="javascript:void(0)">{{ title.key}}</a>
             </li>
             <p ng-show="!detail.have_desc" class="coming-soon">COMING SOON</p>
         </ul>
@@ -22,8 +30,8 @@
         </div>
         <div class="product-detail">
             <div class="product-detail-slider">
-                
-                <div class="silde" ng-if="detail.how_to_plant != '' ">
+
+                <div class="silde" ng-if="detail.how_to_plant != ''">
                     <div class="slide-container">
                         <h3>How to plant</h3>
                         <ul class="plant">
@@ -35,7 +43,7 @@
                     <a href="javascript:void(0)" class="next" data-value="1"><span>Requirements to grow</span></a>
                 </div>
 
-                <div class="silde" ng-if="detail.req_to_grow != '' ">
+                <div class="silde" ng-if="detail.req_to_grow != ''">
                     <div class="slide-container">
                         <h3>Requirements to grow</h3>
                         <ul>
@@ -48,7 +56,7 @@
                     <a href="javascript:void(0)" class="next" data-value="2"><span>How to Harvest</span></a>
                 </div>
 
-                <div class="silde" ng-if="detail.how_to_harvest != '' ">
+                <div class="silde" ng-if="detail.how_to_harvest != ''">
                     <div class="slide-container">
                         <h3>How to Harvest</h3>
                         <ul>
@@ -61,7 +69,7 @@
                     <a href="javascript:void(0)" class="next" data-value="3"><span>Nutrition Value</span></a>
                 </div>
 
-                <div class="silde" ng-if="detail.nutrition != '' ">
+                <div class="silde" ng-if="detail.nutrition != ''">
                     <div class="slide-container">
                         <h3>Nutrition Value</h3>
                         <p class="nu-desc">{{ detail.nutrition_intro}}</p>
@@ -77,7 +85,7 @@
                     </div>
                     <a href="javascript:void(0)" class="next" data-value="4"><span>Health Benefit</span></a>
                 </div>
-                <div class="silde" ng-if="detail.benefit != '' ">
+                <div class="silde" ng-if="detail.benefit != ''">
                     <div class="slide-container">
                         <h3>Health Benefit</h3>
                         <ul class="health_container">
