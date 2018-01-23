@@ -101,6 +101,9 @@
         <!-- iPad Spotlight and Settings Icon -->
         <icon src="icons/50@1x.png" platform="ios" width="50" height="50" />
         <icon src="icons/50@2x.png" platform="ios" width="100" height="100" />
+        
+        <icon src="icons/1024px.png" platform="ios" width="1024" height="1024" />
+        
     </platform>
     <engine name="android" spec="~5.0.0" />
     <plugin name="cordova-plugin-ignore-lint-translation" spec="~0.0.1" />
